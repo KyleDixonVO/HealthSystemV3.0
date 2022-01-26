@@ -10,6 +10,9 @@ namespace HealthSystemV3._0
     {
         static void Main(string[] args)
         {
+            UnitTest test = new UnitTest();
+            test.RunUnitTest();
+            Console.ReadKey(true);
         }
     }
 }
