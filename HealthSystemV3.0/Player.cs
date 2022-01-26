@@ -102,6 +102,7 @@ namespace HealthSystemV3._0
             RegenTest(int.MinValue, 100, 0, 3, 100, 0, 3);
             RegenTest(int.MaxValue, 100, 0, 3, 100, 100, 3);
             RegenTest(int.MaxValue, 100, 100, 3, 100, 100, 3);
+            Console.Clear();
         }
 
         public void DamageTest(int damage, int healthValue, int shieldValue, int livesValue, int assertedHealth, int assertedShield, int assertedLives)
@@ -135,6 +136,17 @@ namespace HealthSystemV3._0
             Debug.Assert(health == assertedHealth);
             Debug.Assert(shield == assertedShield);
             Debug.Assert(lives == assertedLives);
+        }
+
+        public new void ShowStats()
+        {
+            Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Shield: " + shield);
+            Console.WriteLine("Health: " + health);
+            Console.WriteLine("Lives: " + lives);
+            Console.ResetColor();
+            Console.WriteLine("");
         }
     }
 }

@@ -32,6 +32,7 @@ namespace HealthSystemV3._0
             RegenTest(int.MaxValue, 100, 0, 100, 100);
             RegenTest(int.MinValue, 100, 0, 100, 0);
             RegenTest(int.MinValue, 100, 100, 100, 100);
+            Console.Clear();
         }
 
         public void DamageTest(int damage, int healthValue, int shieldValue, int assertedHealth, int assertedShield)

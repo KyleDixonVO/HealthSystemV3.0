@@ -10,10 +10,10 @@ namespace HealthSystemV3._0
     {
         public void RunUnitTest()
         {
-            Player player = new Player();
-            Enemy enemy = new Enemy();
-            player.UnitTest();
-            enemy.UnitTest();
+            Player uTestPlayer = new Player();
+            Enemy uTestEnemy = new Enemy();
+            uTestPlayer.UnitTest();
+            uTestEnemy.UnitTest();
         }
     }
 }

@@ -8,10 +8,10 @@ namespace HealthSystemV3._0
 {
     class GameCharacter
     {
-        public int health;
-        public int shield;
         public int defaultHealth = 100;
         public int defaultShield = 100;
+        public int health = 100;
+        public int shield = 100;
         private int remainder;
 
 

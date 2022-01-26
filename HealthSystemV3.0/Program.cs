@@ -12,6 +12,10 @@ namespace HealthSystemV3._0
         {
             UnitTest test = new UnitTest();
             test.RunUnitTest();
+            Player player = new Player();
+            player.ShowStats();
+            Enemy enemy = new Enemy();
+            enemy.ShowStats();
             Console.ReadKey(true);
         }
     }
