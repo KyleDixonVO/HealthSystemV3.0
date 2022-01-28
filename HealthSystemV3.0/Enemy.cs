@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Diagnostics;
 
 namespace HealthSystemV3._0
 {
     class Enemy : GameCharacter
     {
-        //private int remainder;
-
         public void UnitTest()
         {
             DamageTest(50, 100, 100, 100, 50);
@@ -60,7 +54,5 @@ namespace HealthSystemV3._0
             Debug.Assert(health == assertedHealth);
             Debug.Assert(shield == assertedShield);
         }
-
-
     }
 }

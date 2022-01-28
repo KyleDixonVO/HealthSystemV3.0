@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Diagnostics;
 
 namespace HealthSystemV3._0
@@ -11,9 +7,7 @@ namespace HealthSystemV3._0
     {
         public int lives = 3;
         public int defaultLives = 3;
-        //public int defaultHealth = 100;
-        public bool dead = false;
-        private int remainder;
+        private bool dead = false;
 
         public new void TakeDamage(int damage)
         {
@@ -46,7 +40,7 @@ namespace HealthSystemV3._0
             }
         }
 
-        public void Die()
+        private void Die()
         {
             ShowStats();
             Console.WriteLine("Player lost a life!");
@@ -64,7 +58,7 @@ namespace HealthSystemV3._0
             lives--;
         }
 
-        public void Respawn()
+        private void Respawn()
         {
             health = defaultHealth;
             shield = defaultShield;
@@ -102,6 +96,7 @@ namespace HealthSystemV3._0
             RegenTest(int.MinValue, 100, 0, 3, 100, 0, 3);
             RegenTest(int.MaxValue, 100, 0, 3, 100, 100, 3);
             RegenTest(int.MaxValue, 100, 100, 3, 100, 100, 3);
+            ResetTest(1, 0, 0, 100, 100, 3);
             Console.Clear();
         }
 
@@ -133,6 +128,17 @@ namespace HealthSystemV3._0
             health = healthValue;
             lives = livesValue;
             RegenShield(SP);
+            Debug.Assert(health == assertedHealth);
+            Debug.Assert(shield == assertedShield);
+            Debug.Assert(lives == assertedLives);
+        }
+
+        public void ResetTest(int healthValue, int shieldValue, int livesValue, int assertedHealth, int assertedShield, int assertedLives)
+        {
+            health = healthValue;
+            shield = shieldValue;
+            lives = livesValue;
+            Reset();
             Debug.Assert(health == assertedHealth);
             Debug.Assert(shield == assertedShield);
             Debug.Assert(lives == assertedLives);

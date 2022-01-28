@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HealthSystemV3._0
 {
-    class GameCharacter
+    abstract class GameCharacter
     {
         public int defaultHealth = 100;
         public int defaultShield = 100;
         public int health = 100;
         public int shield = 100;
-        private int remainder;
+        protected int remainder;
 
 
         public void TakeDamage(int damage)
